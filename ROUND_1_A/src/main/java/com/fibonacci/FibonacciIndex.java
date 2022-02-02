@@ -11,10 +11,10 @@ public class FibonacciIndex {
             return (int) fibonacci;
         }
 
-        return generateSequence(fibonacci);
+        return seek(fibonacci);
     }
 
-    private int generateSequence(long fibonacci) {
+    private int seek(long fibonacci) {
         int indexOfFibonacci = -1;
         int currentIndex = 2;
         long f = 0;
