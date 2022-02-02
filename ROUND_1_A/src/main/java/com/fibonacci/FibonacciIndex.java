@@ -22,7 +22,7 @@ public class FibonacciIndex {
         while (f < fibonacci) {
             f = sequence.get(currentIndex - 1) + sequence.get(currentIndex - 2);
             if (f == fibonacci)
-                indexOfFibonacci = currentIndex;
+                return currentIndex;
             sequence.add(f);
             currentIndex++;
         }
