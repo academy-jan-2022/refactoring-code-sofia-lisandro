@@ -1,6 +1,5 @@
 package com.fibonacci;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -13,20 +12,16 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
-public class FibonacciIndexTest {
+public class FibonacciIndexHappyPathTest {
 
-    private final int expectedIndex;
-    private final long fibonacci;
-    private FibonacciIndex fibonacciIndex;
+    protected final int expectedIndex;
+    protected final long fibonacci;
+    protected final FibonacciIndex index;
 
-    @Before
-    public void setUp() {
-        fibonacciIndex = new FibonacciIndex();
-    }
-
-    public FibonacciIndexTest(int expectedIndex, long fibonacci) {
+    public FibonacciIndexHappyPathTest(int expectedIndex, long fibonacci) {
         this.expectedIndex = expectedIndex;
         this.fibonacci = fibonacci;
+        index = new FibonacciIndex();
     }
 
 
@@ -39,17 +34,8 @@ public class FibonacciIndexTest {
 
     @Test
     public void findsIndexOfFibonacciNumber() {
-        assertEquals(expectedIndex, fibonacciIndex.findIndexOf(fibonacci));
-    }
 
-    @Test
-    public void whenNumberNotFoundThenIndexIsMinusOne() {
-        assertEquals(-1, fibonacciIndex.findIndexOf(7));
-    }
-
-    @Test
-    public void cannotFindIndexOfNegativeNumber() {
-        assertEquals(-1, fibonacciIndex.findIndexOf(-1));
+        assertEquals(expectedIndex, index.findIndexOf(fibonacci));
     }
 
 
